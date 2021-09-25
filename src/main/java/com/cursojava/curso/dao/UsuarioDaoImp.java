@@ -22,6 +22,7 @@ public class UsuarioDaoImp implements UsuarioDao {
     @Autowired
     private AppConfig appConfig;
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<Usuario> getUsuario() {
         String query = "FROM Usuario";
@@ -45,6 +46,7 @@ public class UsuarioDaoImp implements UsuarioDao {
         entityManager.merge(usuario);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public Usuario obtenerUsuarioPorCredenciales(Usuario usuario) {
         String query = "FROM Usuario WHERE email = :email";
